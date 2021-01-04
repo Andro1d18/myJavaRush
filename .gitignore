@@ -7,12 +7,12 @@ target/
 .repository/
 #*.iml
 *.iws
-*.jrtc
+#*.jrtc
 #*.java
 *.class
 *.info
 *.properties
-
+*.log
 
 #/2.JavaCore/
 #/3.JavaMultithreading/
