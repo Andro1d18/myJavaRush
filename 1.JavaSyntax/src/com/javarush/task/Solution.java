@@ -1,9 +1,6 @@
 package com.javarush.task;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class Solution {
     public static void main(String[] args) {
@@ -24,6 +21,20 @@ public class Solution {
 
         public Hryvnia getMoney() {
             return this;
+        }
+    }
+    public void doSomething(List<? extends Solution> list)
+    {
+        for(Solution object : list)
+        {
+            System.out.println(); //тут все работает отлично.
+        }
+    }
+    public static <T> void add(List<? super T> destinationList, List<? extends T> sourceList) { //<D, H extends D, S extends H>
+        ListIterator<? super T> destListIterator = destinationList.listIterator();
+        ListIterator<? extends T> srcListIterator = sourceList.listIterator();
+        for (int i = 0; i < sourceList.size(); i++) {
+            destListIterator.add(srcListIterator.next());
         }
     }
 }
