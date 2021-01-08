@@ -4,37 +4,43 @@ import java.util.*;
 
 public class Solution {
     public static void main(String[] args) {
-        System.out.println(new Hryvnia().getAmount());
+//        String[] stringLists = new String[1];  //  (1)
+//
+//        Object[] objects = stringLists;  //  (3)
+//        objects[0] = 1;  //  (4)
+//        String s = stringLists[0];  //  (5)
+
+//        Box<String> stringBox = new Box<>();
+//        Box rawBox = stringBox;
+//        rawBox.set(8);  // warning: unchecked invocation to set(T)
+        SomeType st = new SomeType();
+        List<String> list = Arrays.asList("test");
+        st.test(list);
+        List<Number> list1 = new ArrayList<>();
+        list1.add( 5);
+        System.out.println(list1.get(0).getClass());
+        Number[] integers = new Number[5];
+        integers[0] = 55;
+        System.out.println(integers[0].getClass());
     }
 
-    public static abstract class Money {
-        abstract Money getMoney();
+//    public static class Box<T> {
+//        public void set(T t) { /* ... */ }
+//        // ...
+//    }
 
-        public Object getAmount() {
-            return getMoney().getAmount();
+    public static class SomeType<T> {
+        public <E> void test(Collection<E> collection) {
+            for (E element : collection) {
+                System.out.println(element);
+                System.out.println("coll list");
+            }
         }
-    }
-
-    //add your code below - добавь код ниже
-    public static class Hryvnia extends Money {
-        private double amount = 123d;
-
-        public Hryvnia getMoney() {
-            return this;
-        }
-    }
-    public void doSomething(List<? extends Solution> list)
-    {
-        for(Solution object : list)
-        {
-            System.out.println(); //тут все работает отлично.
-        }
-    }
-    public static <T> void add(List<? super T> destinationList, List<? extends T> sourceList) { //<D, H extends D, S extends H>
-        ListIterator<? super T> destListIterator = destinationList.listIterator();
-        ListIterator<? extends T> srcListIterator = sourceList.listIterator();
-        for (int i = 0; i < sourceList.size(); i++) {
-            destListIterator.add(srcListIterator.next());
-        }
+//        public void test(List<Integer> collection) {
+//            for (Integer element : collection) {
+//                System.out.println(element);
+//                System.out.println("list<integer>");
+//            }
+//        }
     }
 }
