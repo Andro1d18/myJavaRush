@@ -2,10 +2,7 @@ package com.javarush.task.task37.task3701;
 
 import javax.swing.text.InternationalFormatter;
 import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.ConcurrentModificationException;
-import java.util.Iterator;
-import java.util.ListIterator;
+import java.util.*;
 import java.util.function.Consumer;
 
 /* 
@@ -28,13 +25,8 @@ public class Solution<T> extends ArrayList<T> {
                 break;
             }
         }
-        System.out.println();
-        Iterator<Integer> itr = list.iterator();
-        itr.next();
-        itr.remove();
-        for (int i = 0; i < list.size(); i++) {
-            System.out.println(list.get(i));
-        }
+
+
     }
 
     @Override
