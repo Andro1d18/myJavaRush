@@ -22,6 +22,8 @@ public class Solution {
         Number[] integers = new Number[5];
         integers[0] = 55;
         System.out.println(integers[0].getClass());
+        System.out.println();
+        System.out.println(60 & 7);
     }
 
 //    public static class Box<T> {
