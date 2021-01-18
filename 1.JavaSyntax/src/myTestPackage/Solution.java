@@ -1,4 +1,4 @@
-package com.javarush.task;
+package myTestPackage;
 
 import java.util.*;
 

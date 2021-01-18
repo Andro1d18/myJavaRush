@@ -1,4 +1,4 @@
-package com.javarush.task;
+package myTestPackage;
 
 class Cat
 {
@@ -21,5 +21,7 @@ class Cat
         Cat.print((byte)1);
         Cat.print("1");
         Cat.print(null);
+        Outer.Inner inner = new Outer().new Inner();
+        Outer.InnerStatic innerStatic = new Outer.InnerStatic();
     }
 }
